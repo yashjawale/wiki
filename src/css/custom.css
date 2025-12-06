@@ -36,3 +36,7 @@
  
    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
  }
+
+ * {
+     font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
+ }
