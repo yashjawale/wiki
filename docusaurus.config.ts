@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "Wiki | Yash Jawale",
+  title: "Yash Jawale",
   tagline: "Resources & Guides for random quirks",
   favicon: "img/logo.svg",
 
