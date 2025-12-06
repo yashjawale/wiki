@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Wiki | Yash Jawale",
   tagline: "Resources & Guides for random quirks",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.svg",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -78,41 +78,45 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Sites",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "Main Site",
+              to: "https://yashjawale.in",
+            },
+            {
+              label: "Playground",
+              to: "https://yashjawale.in/playground",
             },
           ],
         },
         {
-          title: "Community",
+          title: "Connect",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
+              label: "connect@yashjawale.in",
+              href: "mailto:connect@yashjawale.in",
             },
           ],
         },
         {
-          title: "More",
+          title: "Socials",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/yashjawale",
+            },
+            {
+              label: "Instagram",
+              href: "https://instagram.com/imyashjawale",
+            },
+            {
+              label: "Twitter / X",
+              href: "https://twitter.com/imyashjawale",
+            },
+            {
+              label: "LinkedIn",
+              href: "https://linkedin.com/in/yashjawale",
             },
           ],
         },

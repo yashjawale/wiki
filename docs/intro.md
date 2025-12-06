@@ -3,46 +3,22 @@ slug: /
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Wiki
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This site contains guides & notes about anything I encounter related to computer science.
 
-## Getting Started
+This serves as notes for my later reference so I can still use this knowledge after my goldfish memory forgets it 🐠 & can also help someone facing similar situation.
 
-Get started by **creating a new site**.
+## FAQs
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### Why a site?
+Earlier I used to use a section in notes application for this same purpose but it was getting harder to browse & having these hosted on a website meant two things:
 
-### What you'll need
+1. Lowest amount of friction for accessing them, easier to share with others.
+2. Provides me an incentive to write these a little better rather than being digital equivalents of scribble on paper.
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### You made a mistake
+If you find anything wrong with the content feel free to open a issue on GitHub regarding the same or even a PR with corrections.
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### Nature of content
+While originally created for storing guides covering particular use cases. Perhaps I'll also use it to collect some of the good resources on the internet like courses or just specialized web pages describing a certain topic in detail.
