@@ -40,11 +40,11 @@ const config: Config = {
       "classic",
       {
         docs: {
-          routeBasePath: '/',
+          routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/yashjawale/wiki/tree/main/docs/",
+          editUrl: "https://github.com/yashjawale/wiki/tree/main/",
         },
         blog: false,
         theme: {
