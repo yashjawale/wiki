@@ -40,6 +40,7 @@ const config: Config = {
       "classic",
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -66,13 +67,6 @@ const config: Config = {
         src: "img/logo.svg",
       },
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
-        { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/yashjawale/wiki",
           label: "GitHub",
