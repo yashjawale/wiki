@@ -15,8 +15,6 @@ Add the new user **youruser** to the `sudo` group.
     usermod -aG sudo youruser
     ```
 
----
-
 ## Docker Installation within LXC
 
 **Log out and log back in** with the new user **youruser**.
@@ -28,8 +26,6 @@ Add the current user (`youruser`) to the `docker` group.
     ```bash
     sudo usermod -aG docker youruser
     ```
-
----
 
 ## Shared Directory Setup
 
@@ -44,8 +40,6 @@ Change the permissions of `/share` to allow full access.
 
 > 💡 **Disk Space Check:** To check the available disk space for your container's file system, use the command `df -h`. This command (**d**isk **f**ree, **-h**uman readable) shows the total size, used space, and available space of the mounted file systems in an easy-to-read format (e.g., GB or MB).
 
----
-
 ## Samba Container Deployment (dperson/samba)
 
 Run a Samba container named `samba`.
@@ -56,8 +50,6 @@ List running Docker containers to verify the Samba container is active.
     ```bash
     docker ps
     ```
-
----
 
 ## Accessing the Share
 
