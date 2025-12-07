@@ -1,4 +1,4 @@
-# Screen
+# screen
 
 **`screen`** is a terminal multiplexer that allows users to manage multiple virtual terminal sessions within a single physical terminal. It enables users to detach from a running session, leave processes running in the background, and reattach to the session later, even from a different location.
 
@@ -19,7 +19,9 @@ screen -S sesson_name
 ```
 To create a new window with shell type `Ctrl+a c`, the first available number from the range `0...9` will be assigned to it.
 
-Most common commands for managing Linux Screen Windows:
+## Common Commands
+
+For managing Linux Screen Windows:
 
 - `Ctrl+a c` - Create a new window (with shell).
 - `Ctrl+a "` - List all windows.
@@ -57,7 +59,7 @@ If you want to restore screen `10835.pts-0`, then type the following command:
 screen -r 10835
 ```
 
-### Customization
+## Customization
 
 Config locations:
 
@@ -78,7 +80,7 @@ hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
 ```
 
-### Basic Usage
+## Basic Usage
 1. On the command prompt, type screen.
 2. Run the desired program.
 3. Use the key sequence Ctrl-a + Ctrl-d to detach from the screen session.
