@@ -51,7 +51,7 @@ const config: Config = {
           customCss: "./src/css/custom.css",
         },
         gtag: {
-          trackingID: 'G-8Q4KF722K3'
+          trackingID: "G-8Q4KF722K3",
         },
       } satisfies Preset.Options,
     ],
@@ -131,6 +131,7 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: ["@cmfcmf/docusaurus-search-local"],
 };
 
 export default config;

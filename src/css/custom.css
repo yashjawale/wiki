@@ -40,3 +40,9 @@
  * {
      font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
  }
+ 
+ /* Override search widget */
+ .aa-DetachedSearchButton, .aa-DetachedSearchButtonIcon, .aa-Form, .aa-SubmitIcon, .aa-ClearIcon, .aa-Input, .aa-Input::placeholder {
+     color: var(--ifm-color-primary) !important;
+     border-color: var(--ifm-color-primary) !important;
+ }
