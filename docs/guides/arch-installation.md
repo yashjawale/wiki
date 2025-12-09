@@ -6,7 +6,7 @@ Boot into live Arch ISO
 
 ```bash
 # Switch to a larger font for HiDPI screens
-setfont ter-132b
+setfont ter-132b # or ter-128b
 
 # Verfiy boot mode
 cat /sys/firmware/efi/fw_platform_size
@@ -25,7 +25,7 @@ For WiFi devices, use `iwctl` to connect to a network
 
 ```bash
 # INSIDE iwctl
-get devices
+devices list
 
 # Find device here, eg. wlan0
 # Scan for networks
@@ -67,7 +67,8 @@ fdisk /dev/nvme0n1
 
 # Inside fdisk prompt
 # Use g to start clean
-# p to create partition
+# p to see current partition setup
+# n to create new partition
 # t to change partition type
 # d to delete partition
 
@@ -123,7 +124,7 @@ reflector --country CODE --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 #### Essential packages
 
 ```bash
-pacstrap -K /mnt base linux linux-firmware base-devel vim nano network-manager
+pacstrap -K /mnt base linux linux-firmware base-devel vim nano networkmanager intel-ucode
 ```
 
 Generate fstab
