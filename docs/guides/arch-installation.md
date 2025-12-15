@@ -215,7 +215,7 @@ Remove the media while rebooting, after booting into new installation, use `nmtu
 
 Upgrade system with `pacman -Syu`
 
-In TTY, install `termius-font` package to get larger font
+In TTY, install `terminus-font` package to get larger font
 
 Run `ls /usr/share/kbd/consolefonts` to get list of available fonts & set the desired one with `setfont ter-128b` or any desired one
 
@@ -273,7 +273,7 @@ sudo systemctl enable bluetooth
 Firmware updates
 
 ```bash
-sudo pacman -S fwupd
+sudo pacman -S fwupd udisks2
 
 fwupdmgr get-devices
 fwupdmgr get-updates
