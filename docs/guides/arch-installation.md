@@ -25,7 +25,7 @@ For WiFi devices, use `iwctl` to connect to a network
 
 ```bash
 # INSIDE iwctl
-devices list
+device list
 
 # Find device here, eg. wlan0
 # Scan for networks
