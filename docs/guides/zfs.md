@@ -4,6 +4,10 @@
 Needs `zfsutils-linux` package to be installed
 Should be available on distribution's repositories.
 
+```js
+console.log('hello')
+```
+
 Check with
 ```bash
 whereis zfs
@@ -42,7 +46,7 @@ The newly created pool is mounted at `/new-pool`. You can select a different mou
 sudo zpool create -m /usr/share/pool new-pool mirror /dev/sdb /dev/sdc
 ```
 
-> For other kinds of RAID setup refer this resource by Ubuntu at https://wiki.ubuntu.com/Kernel/Reference/ZFS?_gl=1*166uyzo*_gcl_au*MTk3NTIyMTcwMi4xNzY2NTE1OTA5
+> For other kinds of RAID setup refer this resource by Ubuntu at https://wiki.ubuntu.com/Kernel/Reference/ZFS
 
 ### Importing existing pools
 
