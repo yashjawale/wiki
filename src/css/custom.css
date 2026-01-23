@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+@import "@fontsource/fira-sans";
+@import "@fontsource-variable/fira-code";
+
 /* You can override the default Infima variables here. */
 :root {
     /* User-defined base primary color */
@@ -21,9 +24,8 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
     /* Fonts */
-    --ifm-font-family-base:
-        Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console,
-        monospace;
+    --ifm-font-family-base: "Fira Sans";
+    --ifm-font-family-monospace: "Fira Code Variable", monospace;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
