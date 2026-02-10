@@ -112,6 +112,20 @@ mkdir /mnt/boot
 mount /dev/BOOT_PARTITION /mnt/boot
 ```
 
+:::info
+For encrypted setups, only boot partition will be unencrypted & rest of them will be under cryptroot \
+Folow the below example to setup encryption
+```bash
+mkfs.fat -F32 /dev/BOOT_PARTITION
+cryptsetup luksFormat /dev/ROOT_PARTITION
+cryptsetup open /dev/ROOT_PARTITION cryptroot
+mkfs.ext4 /dev/mapper/cryptroot
+mount /dev/mapper/cryptroot /mnt
+mkdir /mnt/boot
+mount /dev/BOOT_PARTITION /mnt/boot
+```
+:::
+
 ### Final steps
 
 #### Selecting mirrors
@@ -126,6 +140,10 @@ reflector --country CODE --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 ```bash
 pacstrap -K /mnt base linux linux-firmware base-devel vim nano networkmanager intel-ucode
 ```
+
+:::info
+For encrypted setups also install `lvm2` and `cryptsetup`
+:::
 
 Generate fstab
 
@@ -176,6 +194,11 @@ useradd -m -G wheel,users myuser
 passwd myuser
 ```
 
+:::info
+For encrypted setups, add necessary hook entries \
+In the file `/etc/mkinitcpio.conf` add `encrypt lvm2` between `block` & `filesystems` under `HOOKS`. After this regenerate mkcpinitio with `mkinitcpio -P`
+:::
+
 Enable NetworkManager service
 
 ```bash
@@ -195,6 +218,19 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+:::info
+For encrypted systems, before running `mkconfig` we need to edit grub configuration as follows:
+
+Get the UUIDs for encrytped & decrypted devices, for this first run `blkid -o value -s UUID /dev/ROOT_PARTITION >> /etc/default/grub` & again for decrypted device, `blkid -o value -s UUID /dev/mapper/cryptroot >> /etc/default/grub`
+
+Then edit `/etc/default/grub` to have this line...
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="... quiet cryptdevice=UUID=<enc_UUID>:cryptroot root=UUID=<dec_UUID>"
+```
+
+:::
 
 If dual booting, before rebooting install `os-prober` & run `os-prober` as root to detect & generate a boot entry. Don't format EFI partition.
 
