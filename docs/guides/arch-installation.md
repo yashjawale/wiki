@@ -218,6 +218,9 @@ Setup bootloader
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
+# Alternative if the above doesn't work (for encrypted setups)
+grub-install --efi-directory=/boot --bootloader-id=GRUB /dev/DEVICE
+
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
