@@ -194,6 +194,8 @@ useradd -m -G wheel,users myuser
 passwd myuser
 ```
 
+Also enable sudo by uncommenting line that allow wheel group to run commands by running `visudo`
+
 :::info
 For encrypted setups, add necessary hook entries \
 In the file `/etc/mkinitcpio.conf` add `encrypt lvm2` between `block` & `filesystems` under `HOOKS`. After this regenerate mkcpinitio with `mkinitcpio -P`
