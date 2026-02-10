@@ -222,9 +222,6 @@ Setup bootloader
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
-# Alternative if the above doesn't work (for encrypted setups)
-grub-install --efi-directory=/boot --bootloader-id=GRUB /dev/DEVICE
-
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -342,3 +339,7 @@ For smooth functioning
 ```
 sudo pacman -S kde-cli-tools xde-desktop-portal xde-desktop-portal-kde kio nss
 ```
+
+# Resources:
+- https://wiki.archlinux.org/title/Installation_guide
+- https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
