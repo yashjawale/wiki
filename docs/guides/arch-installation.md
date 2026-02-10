@@ -201,8 +201,8 @@ For encrypted setups, add necessary hook entries \
 In the file `/etc/mkinitcpio.conf` add `encrypt lvm2` between `block` & `filesystems` under `HOOKS`. After this regenerate mkcpinitio with `mkinitcpio -P`
 :::
 
-> In modern GRUB versions, when editing /etc/default/grub you should not write root=uuid=<decrypted-uuid>, it should be:
-root=/dev/mapper/cryptroot
+> In modern GRUB versions, when editing /etc/default/grub you should not write `root=uuid=<decrypted-uuid>`, it should be:
+`root=/dev/mapper/cryptroot`
 Or else it won't mount your root partition properly
 
 Enable NetworkManager service
