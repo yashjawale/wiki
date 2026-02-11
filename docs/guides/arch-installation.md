@@ -198,7 +198,7 @@ Also enable sudo by uncommenting line that allow wheel group to run commands by 
 
 :::info
 For encrypted setups, add necessary hook entries \
-In the file `/etc/mkinitcpio.conf` add `encrypt lvm2` between `block` & `filesystems` under `HOOKS`. After this regenerate mkcpinitio with `mkinitcpio -P`
+In the file `/etc/mkinitcpio.conf` add `sd-encrypt` between `block` & `filesystems` under `HOOKS`. After this regenerate mkcpinitio with `mkinitcpio -P`
 :::
 
 Enable NetworkManager service
@@ -231,6 +231,8 @@ GRUB_CMDLINE_LINUX_DEFAULT="... quiet rd.luks.name=*device-UUID*=cryptroot root=
 ```
 
 Here, device UUID refers to the UUID of the LUKS superblock, hence, the actual partition's UUID. (eg. /dev/sda2)
+
+For adding UUID to file, can use this ``blkid -o value -s UUID /dev/ROOT_PARTITION >> /etc/default/grub``
 
 :::
 
