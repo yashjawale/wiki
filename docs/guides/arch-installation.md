@@ -113,14 +113,14 @@ mount /dev/BOOT_PARTITION /mnt/boot
 ```
 
 :::info
-For encrypted setups, only boot partition will be unencrypted & rest of them will be under root \
+For encrypted setups, only boot partition will be unencrypted & rest of them will be under cryptroot \
 Folow the below example to setup encryption
 ```bash
 mkfs.fat -F32 /dev/BOOT_PARTITION
 cryptsetup luksFormat /dev/ROOT_PARTITION
-cryptsetup open /dev/ROOT_PARTITION root
-mkfs.ext4 /dev/mapper/root
-mount /dev/mapper/root /mnt
+cryptsetup open /dev/ROOT_PARTITION cryptroot
+mkfs.ext4 /dev/mapper/cryptroot
+mount /dev/mapper/cryptroot /mnt
 mkdir /mnt/boot
 mount /dev/BOOT_PARTITION /mnt/boot
 ```
@@ -227,7 +227,7 @@ For encrypted systems, before running `mkconfig` we need to edit grub configurat
 Edit `/etc/default/grub` to have this line look like below...
 
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="... quiet rd.luks.name=*device-UUID*=root root=/dev/mapper/root"
+GRUB_CMDLINE_LINUX_DEFAULT="... quiet rd.luks.name=*device-UUID*=cryptroot root=/dev/mapper/cryptroot"
 ```
 
 Here, device UUID refers to the UUID of the LUKS superblock, hence, the actual partition's UUID. (eg. /dev/sda2)
