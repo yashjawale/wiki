@@ -113,14 +113,14 @@ mount /dev/BOOT_PARTITION /mnt/boot
 ```
 
 :::info
-For encrypted setups, only boot partition will be unencrypted & rest of them will be under cryptroot \
+For encrypted setups, only boot partition will be unencrypted & rest of them will be under root \
 Folow the below example to setup encryption
 ```bash
 mkfs.fat -F32 /dev/BOOT_PARTITION
 cryptsetup luksFormat /dev/ROOT_PARTITION
-cryptsetup open /dev/ROOT_PARTITION cryptroot
-mkfs.ext4 /dev/mapper/cryptroot
-mount /dev/mapper/cryptroot /mnt
+cryptsetup open /dev/ROOT_PARTITION root
+mkfs.ext4 /dev/mapper/root
+mount /dev/mapper/root /mnt
 mkdir /mnt/boot
 mount /dev/BOOT_PARTITION /mnt/boot
 ```
@@ -222,19 +222,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 :::info
-For encrypted systems, before running `mkconfig` we need to edit grub configuration as follows:
+For encrypted systems, before running `mkconfig` we need to edit grub configuration to add the necessary kernel parameters for GRUB
 
-Get the UUIDs for encrytped & decrypted devices, for this first run `blkid -o value -s UUID /dev/ROOT_PARTITION >> /etc/default/grub` & again for decrypted device, `blkid -o value -s UUID /dev/mapper/cryptroot >> /etc/default/grub`
-
-Then edit `/etc/default/grub` to have this line...
+Edit `/etc/default/grub` to have this line look like below...
 
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="... quiet cryptdevice=UUID=<enc_UUID>:cryptroot root=UUID=<dec_UUID>"
+GRUB_CMDLINE_LINUX_DEFAULT="... quiet rd.luks.name=*device-UUID*=root root=/dev/mapper/root"
 ```
 
-> In modern GRUB versions, when editing /etc/default/grub you should not write `root=uuid=<decrypted-uuid>`, it should be:
-`root=/dev/mapper/cryptroot`
-Or else it won't mount your root partition properly
+Here, device UUID refers to the UUID of the LUKS superblock, hence, the actual partition's UUID. (eg. /dev/sda2)
 
 :::
 
