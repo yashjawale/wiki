@@ -335,7 +335,7 @@ sudo systemctl enable sddm
 For smooth functioning
 
 ```
-sudo pacman -S kde-cli-tools xde-desktop-portal xde-desktop-portal-kde kio nss
+sudo pacman -S kde-cli-tools xdg-desktop-portal xdg-desktop-portal-kde kio nss
 ```
 
 # Resources:
